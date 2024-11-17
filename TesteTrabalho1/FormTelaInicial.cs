@@ -11,7 +11,7 @@
 
  Este projeto foi feito para um trabalho na materia de Programação de Aplicativos do Curso de Desenvolvimento de Sistemas do Senai. 
  Onde foram usados os conhecimentos de conexão com o banco de dados, classes, instaciações das classes, validações, mudanças de uma tela para outra e orientação a objeto.
- Versão 1.2
+ Versão 1.3
  Nome: Alison Brito 
 */
 
