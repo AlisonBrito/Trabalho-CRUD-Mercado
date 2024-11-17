@@ -154,5 +154,39 @@ namespace TesteTrabalho1.Classes
             }
             return QUANTIDADE;
         }
+
+        public bool ValidadorQuantidadeNegativa(string quantidaNegativa)
+        {
+            bool QUANTIDADE = false;
+            if (int.TryParse(quantidaNegativa, out int quantidade))
+            {
+                if (quantidade <= 0)
+                {
+                    MessageBox.Show("A quantidade de produtos deve ser maior que 0");
+                }
+                else
+                {
+                    QUANTIDADE = true;
+                }
+            }
+            return QUANTIDADE;
+        }
+
+        public bool ValidadorValorNegativo(string valorNegativo)
+        {
+            bool VALOR = false;
+            if (int.TryParse(valorNegativo, out int valor))
+            {
+                if (valor <= 0)
+                {
+                    MessageBox.Show("O valor do produto deve ser maior que 0");
+                }
+                else
+                {
+                    VALOR = true;
+                }
+            }
+            return VALOR;
+        }
     }
 }

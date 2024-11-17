@@ -28,6 +28,8 @@ namespace TesteTrabalho1
         {
             bool NOME = false;
             bool QUANTIDADE = false;
+            bool QUANTIDADENEGATIVA = false;
+            bool VALORNEGATIVO = false;
 
             // VÊ SE TODOS ESPAÇOS FORAM PREENCHIDOS 
             if (validador.ValidadorCampoVazioProdutos(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text))
@@ -46,8 +48,20 @@ namespace TesteTrabalho1
             {
                QUANTIDADE = true;
             }
+            
+            //VALIDANDO SE A QUANTIDADE DE PRODUTOS INFORMADA NÃO É NEGATIVA 
+            if(validador.ValidadorQuantidadeNegativa(textBox4.Text))
+            {
+                QUANTIDADENEGATIVA = true;
+            }
 
-            if (NOME && QUANTIDADE)
+            // VALIDANDO SE O VALOR INFROMADO NÃO É NEGATIVO
+            if(validador.ValidadorValorNegativo(textBox5.Text))
+            {
+                VALORNEGATIVO = true;
+            }
+
+            if (NOME && QUANTIDADE && QUANTIDADENEGATIVA && VALORNEGATIVO)
             {
                 MessageBox.Show("Cadastrado");
 
