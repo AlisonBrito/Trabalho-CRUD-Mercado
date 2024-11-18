@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using BCrypt.Net;
+using static BCrypt.Net.BCrypt;
 
 namespace TesteTrabalho1.Classes
 {

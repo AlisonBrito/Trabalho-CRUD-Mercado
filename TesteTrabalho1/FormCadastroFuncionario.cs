@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TesteTrabalho1.Classes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BCrypt.Net;
+using static BCrypt.Net.BCrypt;
 
 namespace TesteTrabalho1
 {
@@ -22,6 +24,7 @@ namespace TesteTrabalho1
             InitializeComponent();
         }
         Thread tr;
+        private const int WorkFactor = 12;
         GerenciadorBD gbd = new GerenciadorBD();
         ValidadorDeTextos validador = new ValidadorDeTextos();
 
@@ -67,6 +70,9 @@ namespace TesteTrabalho1
                 CARACTERESPECIAL = true;
             }
 
+            // CRIPTOGRAFANDO A SENHA 
+            string senhaHash = HashPassword(textBox1.Text, WorkFactor);
+
             if (MAIUSCULA && MINISCULA && CARACTERESPECIAL && NOME && EMAIL)
             {
                 MessageBox.Show("Cadastrado");
@@ -87,7 +93,7 @@ namespace TesteTrabalho1
                     cmd.Parameters.AddWithValue("@funcao", maskedTextBox4.Text);
                     cmd.Parameters.AddWithValue("@email", maskedTextBox5.Text);
                     cmd.Parameters.AddWithValue("@login", maskedTextBox6.Text);
-                    cmd.Parameters.AddWithValue("@senha", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@senha", senhaHash);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Sucesso");
