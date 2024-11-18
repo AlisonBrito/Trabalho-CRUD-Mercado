@@ -45,11 +45,12 @@ namespace TesteTrabalho1
         {
             Application.Run(new FormCadastroFuncionario());
         }
-
+        
         private void janelaCadastroProduto(object obj)
         {
             Application.Run(new FormCadastroProduto());
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

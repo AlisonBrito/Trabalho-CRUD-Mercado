@@ -96,7 +96,7 @@
             this.maskedTextBox4.Location = new System.Drawing.Point(219, 125);
             this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(132, 27);
+            this.maskedTextBox4.Size = new System.Drawing.Size(196, 27);
             this.maskedTextBox4.TabIndex = 26;
             // 
             // maskedTextBox3
