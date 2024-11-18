@@ -35,17 +35,24 @@ namespace TesteTrabalho1
             bool MINISCULA = false;
             bool CARACTERESPECIAL = false;
             bool NOME = false;
+            bool NUMEROIDADE = false;
             bool EMAIL = false;
 
             // VALIDANDO SE TODOS ESPAÇOS ESTÃO PREENCHIDOS, CÓDIGO ABAIXO
-            if (validador.ValidadorCampoVazioFuncionario(maskedTextBox1.Text, maskedTextBox2.Text, maskedTextBox3.Text,
+            if (validador.ValidadorCampoVazioFuncionario(maskedTextBox1.Text, textBox2.Text, maskedTextBox3.Text,
             maskedTextBox4.Text, maskedTextBox5.Text, maskedTextBox6.Text, textBox1.Text))
             {
                 return;
             }
 
+            // VALIDANDO SE ESCREVEU NUMERO PARA IDADE 
+            if(validador.ValidadorNumeroIdade(textBox2.Text))
+            {
+                NUMEROIDADE = true;
+            }
+
             // VALIDANDO O MÍNIMO DE IDADE PARA ENTRAR NO SISTEMA, CÓDIGO ABAIXO
-            if (!validador.ValidadorIdade(maskedTextBox2.Text))
+            if (!validador.ValidadorIdade(textBox2.Text))
             {
                 return; 
             }
@@ -73,7 +80,7 @@ namespace TesteTrabalho1
             // CRIPTOGRAFANDO A SENHA 
             string senhaHash = HashPassword(textBox1.Text, WorkFactor);
 
-            if (MAIUSCULA && MINISCULA && CARACTERESPECIAL && NOME && EMAIL)
+            if (MAIUSCULA && MINISCULA && CARACTERESPECIAL && NOME && EMAIL && NUMEROIDADE)
             {
                 MessageBox.Show("Cadastrado");
 
@@ -88,7 +95,7 @@ namespace TesteTrabalho1
                     cmd.CommandText = "INSERT INTO funcionarios (nome,idade,CPF,funcao,email,login,senha ) " +
                         "VALUES (@nome, @idade, @CPF, @funcao, @email, @login, @senha)";
                     cmd.Parameters.AddWithValue("@nome", maskedTextBox1.Text);
-                    cmd.Parameters.AddWithValue("@idade", maskedTextBox2.Text);
+                    cmd.Parameters.AddWithValue("@idade", textBox2.Text);
                     cmd.Parameters.AddWithValue("@CPF", maskedTextBox3.Text);
                     cmd.Parameters.AddWithValue("@funcao", maskedTextBox4.Text);
                     cmd.Parameters.AddWithValue("@email", maskedTextBox5.Text);
@@ -106,7 +113,7 @@ namespace TesteTrabalho1
                 {
                     conn.Close();
                     maskedTextBox1.Clear();
-                    maskedTextBox2.Clear();
+                    textBox2.Clear();
                     maskedTextBox3.Clear();
                     maskedTextBox4.Clear();
                     maskedTextBox5.Clear();

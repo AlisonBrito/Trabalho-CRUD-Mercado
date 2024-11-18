@@ -101,6 +101,23 @@ namespace TesteTrabalho1.Classes
             return IDADE;
         }
 
+        public bool ValidadorNumeroIdade(string idade)
+        {
+            bool ANO = false;
+            foreach (char l in idade)
+            {
+                if (l >= 48 && l <= 57)
+                {
+                    ANO = true;
+                }
+            }
+            if (!ANO)
+            {
+                MessageBox.Show("Apenas é aceito números para a idade");
+            }
+            return ANO;
+        }
+
         public bool ValidadorCampoVazioFuncionario(string campo1, string campo2, string campo3, string campo4, string campo5, string campo6, string campo7)
         {
             bool CAMPO = false; 
