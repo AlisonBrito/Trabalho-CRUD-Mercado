@@ -24,6 +24,9 @@ create table clientes
 alter table clientes add column 	
 pontuacao int;
 
+alter table clientes add column 	
+pontuacao int;
+
 create table produtos 
 (
 	id_produtos int not null auto_increment primary key,
