@@ -22,6 +22,9 @@ create table clientes
 	dt_registro varchar(255)
 );
 
+alter table clientes add column 	
+pontuacao int;
+
 create table produtos 
 (
 	id_produtos int not null auto_increment primary key,
