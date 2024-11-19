@@ -118,6 +118,23 @@ namespace TesteTrabalho1.Classes
             return ANO;
         }
 
+        public bool ValidadorPontuacaoClientes(string pontuacaoClientes)
+        {
+            bool PONTUACAO = false;
+            foreach (char l in pontuacaoClientes)
+            {
+                if (l >= 48 && l <= 57)
+                {
+                    PONTUACAO = true;
+                }
+            }
+            if (!PONTUACAO)
+            {
+                MessageBox.Show("Apenas é aceito números para a pontução");
+            }
+            return PONTUACAO;
+        }
+
         public bool ValidadorCampoVazioFuncionario(string campo1, string campo2, string campo3, string campo4, string campo5, string campo6, string campo7)
         {
             bool CAMPO = false; 

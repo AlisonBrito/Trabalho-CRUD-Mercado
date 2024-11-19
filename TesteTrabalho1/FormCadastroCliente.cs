@@ -27,7 +27,7 @@ namespace TesteTrabalho1
         ///////////////// PARTE ONDE ESTA FAZENDO VALIDAÇÕES /////////////////
         private void button1_Click(object sender, EventArgs e)
         {
-
+            bool PONTUACAO = false;
             bool NOME = false;
 
             if (validador.ValidadorCampoVazioCliente(textBox1.Text, maskedTextBox1.Text, maskedTextBox2.Text))
@@ -40,7 +40,12 @@ namespace TesteTrabalho1
                 NOME = true;
             }
 
-            if (NOME)
+            if(validador.ValidadorPontuacaoClientes(textBox2.Text))
+            {
+                PONTUACAO = true;
+            }
+
+            if (NOME && PONTUACAO)
             {
                 MessageBox.Show("Cadastrado");
 
@@ -52,12 +57,12 @@ namespace TesteTrabalho1
                 {
                     conn.Open();
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO clientes (nome,CPF,dt_registro) " +
-                        "VALUES (@nome, @CPF, @dt_registro)";
+                    cmd.CommandText = "INSERT INTO clientes (nome,CPF,dt_registro,pontuacao) " +
+                        "VALUES (@nome, @CPF, @dt_registro, @pontuacao)";
                     cmd.Parameters.AddWithValue("@nome", textBox1.Text);
                     cmd.Parameters.AddWithValue("@CPF", maskedTextBox1.Text);
                     cmd.Parameters.AddWithValue("@dt_registro", maskedTextBox2.Text);
-
+                    cmd.Parameters.AddWithValue("@pontuacao", textBox2.Text);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Sucesso");
@@ -72,6 +77,7 @@ namespace TesteTrabalho1
                     textBox1.Clear();
                     maskedTextBox1.Clear();
                     maskedTextBox2.Clear();
+                    textBox2.Clear();
                 }
             }
         }
