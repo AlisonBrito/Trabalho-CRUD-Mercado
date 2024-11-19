@@ -1,6 +1,6 @@
 ﻿namespace TesteTrabalho1
 {
-    partial class FormCRUDClientes
+    partial class FormCRUDFuncionarios
     {
         /// <summary>
         /// Required designer variable.
@@ -36,8 +36,6 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Excluir});
@@ -47,7 +45,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(991, 506);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
@@ -60,15 +58,15 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 526);
+            this.button1.Location = new System.Drawing.Point(13, 526);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 26);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 11;
             this.button1.Text = "Voltar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // FormCRUDClientes
+            // FormCRUDFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -76,10 +74,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "FormCRUDClientes";
+            this.Name = "FormCRUDFuncionarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCRUDClientes";
-            this.Load += new System.EventHandler(this.FormCRUDClientes_Load);
+            this.Text = "FormCRUDFuncionarios";
+            this.Load += new System.EventHandler(this.FormCRUDFuncionarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
