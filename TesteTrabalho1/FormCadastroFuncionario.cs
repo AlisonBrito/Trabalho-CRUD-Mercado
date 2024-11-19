@@ -117,6 +117,7 @@ namespace TesteTrabalho1
                     maskedTextBox3.Clear();
                     maskedTextBox4.Clear();
                     maskedTextBox5.Clear();
+                    maskedTextBox6.Clear();
                     textBox1.Clear();
                 }
             }

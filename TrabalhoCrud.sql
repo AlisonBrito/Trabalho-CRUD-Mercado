@@ -21,6 +21,8 @@ create table clientes
     CPF varchar(255),
 	dt_registro varchar(255)
 );
+alter table clientes add column 	
+pontuacao int;
 
 create table produtos 
 (
