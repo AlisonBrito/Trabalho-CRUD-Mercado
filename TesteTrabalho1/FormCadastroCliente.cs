@@ -29,10 +29,17 @@ namespace TesteTrabalho1
         {
             bool PONTUACAO = false;
             bool NOME = false;
+            bool VALIDACPF = false;
+            bool VALIDADATAREGISTRO = false;
 
             if (validador.ValidadorCampoVazioCliente(textBox1.Text, maskedTextBox1.Text, maskedTextBox2.Text))
             {
                 return;
+            }
+
+            if (validador.ValidadorDt_Registro(maskedTextBox2.Text))
+            {
+                VALIDADATAREGISTRO = true;  
             }
 
             if (validador.ValidadorNome(textBox1.Text))
@@ -45,7 +52,12 @@ namespace TesteTrabalho1
                 PONTUACAO = true;
             }
 
-            if (NOME && PONTUACAO)
+            if(validador.ValidadorMaskCPF(maskedTextBox1.Text))
+            {
+                VALIDACPF = true;
+            }
+
+            if (NOME && PONTUACAO && VALIDACPF && VALIDADATAREGISTRO)
             {
                 MessageBox.Show("Cadastrado");
 

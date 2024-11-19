@@ -15,6 +15,27 @@ namespace TesteTrabalho1.Classes
 {
     internal class ValidadorDeTextos
     {
+
+        public bool ValidadorMaskCPF(string campo1)
+        {
+            if(campo1 == "   ,   ,   -")
+            {
+                MessageBox.Show("Preencha o CPF");
+                return false; 
+            }
+            return true;
+        }
+
+        public bool ValidadorDt_Registro(string campo1)
+        {
+            if (campo1 == "  -  -")
+            {
+                MessageBox.Show("Preencha a data de registro");
+                return false;
+            }
+            return true;
+        }
+
         public bool ValidadorSenha(string senha)
         {
             bool MAIUSCULA = false;

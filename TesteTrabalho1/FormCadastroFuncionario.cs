@@ -37,12 +37,19 @@ namespace TesteTrabalho1
             bool NOME = false;
             bool NUMEROIDADE = false;
             bool EMAIL = false;
+            bool VALIDACPF = false; 
 
             // VALIDANDO SE TODOS ESPAÇOS ESTÃO PREENCHIDOS, CÓDIGO ABAIXO
             if (validador.ValidadorCampoVazioFuncionario(maskedTextBox1.Text, textBox2.Text, maskedTextBox3.Text,
             maskedTextBox4.Text, maskedTextBox5.Text, maskedTextBox6.Text, textBox1.Text))
             {
                 return;
+            }
+
+            
+            if (validador.ValidadorMaskCPF(maskedTextBox3.Text))
+            {
+                VALIDACPF = true;
             }
 
             // VALIDANDO SE ESCREVEU NUMERO PARA IDADE 
@@ -80,7 +87,7 @@ namespace TesteTrabalho1
             // CRIPTOGRAFANDO A SENHA 
             string senhaHash = HashPassword(textBox1.Text, WorkFactor);
 
-            if (MAIUSCULA && MINISCULA && CARACTERESPECIAL && NOME && EMAIL && NUMEROIDADE)
+            if (MAIUSCULA && MINISCULA && CARACTERESPECIAL && NOME && EMAIL && NUMEROIDADE && VALIDACPF)
             {
                 MessageBox.Show("Cadastrado");
 
